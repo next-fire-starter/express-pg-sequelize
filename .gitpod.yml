@@ -1,11 +1,9 @@
 image:
   file: .gitpod.Dockerfile
 
-# データベースを作成するファイル database.sql を読み込む
-# スキーマを作成するファイル schema.sql を読み込む
+# Timezone Tokyo
 tasks:
-  - init: psql -f ./env/db/database.sql
-       && psql -d techdb -f ./env/db/schema.sql
+  - command: export TZ="Asia/Tokyo"
 
 # Postgresql extension
 vscode:
