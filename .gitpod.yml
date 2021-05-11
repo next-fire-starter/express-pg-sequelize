@@ -1,0 +1,13 @@
+image:
+  file: .gitpod.Dockerfile
+
+# データベースを作成するファイル database.sql を読み込む
+# スキーマを作成するファイル schema.sql を読み込む
+tasks:
+  - init: psql -f ./env/db/database.sql
+       && psql -d techdb -f ./env/db/schema.sql
+
+# Postgresql extension
+vscode:
+  extensions:
+    - ckolkman.vscode-postgres@1.1.17:804d27cd5e9ff60a8c46a387413e9cbf
