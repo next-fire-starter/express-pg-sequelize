@@ -3,6 +3,7 @@ image:
 
 # Timezone Tokyo
 tasks:
+  - init: npm install
   - command: export TZ="Asia/Tokyo"
 
 # Postgresql extension
