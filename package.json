@@ -5,13 +5,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "export NODE_ENV=test ; npm run db:setup ; jest --forceExit ; npm run db:drop",
+    "db:setup": "sequelize db:create ; sequelize db:migrate ; sequelize db:seed:all",
+    "db:drop": "sequelize db:drop"
   },
   "dependencies": {
     "pg": "^8.6.0",
     "sequelize": "^6.6.2"
   },
   "devDependencies": {
+    "jest": "^26.6.3",
     "sequelize-cli": "^6.2.0"
   }
 }
