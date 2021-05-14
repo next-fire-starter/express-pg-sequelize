@@ -5,9 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "export NODE_ENV=test ; npm run db:setup ; jest --forceExit ; npm run db:drop",
-    "db:setup": "sequelize db:create ; sequelize db:migrate ; sequelize db:seed:all",
-    "db:drop": "sequelize db:drop"
+    "test": "export NODE_ENV=test ; npm run db:setup-data ; jest --forceExit ; npm run db:drop-data",
+    "db:setup-data": "sequelize db:seed:undo:all ; sequelize db:seed:all",
+    "db:drop-data": "sequelize db:seed:undo:all"
   },
   "dependencies": {
     "pg": "^8.6.0",
