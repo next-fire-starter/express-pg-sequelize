@@ -31,3 +31,8 @@ npx sequelize db:migrate
 ```
 npx sequelize db:seed:all
 ```
+
+##### データ作成を戻す（テーブル初期化）
+```
+npx sequelize db:seed:undo:all
+```
