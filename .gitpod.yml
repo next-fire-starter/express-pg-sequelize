@@ -4,6 +4,9 @@ image:
 # Timezone Tokyo
 tasks:
   - init: npm install
+      &&  npx sequelize db:create
+      &&  npx sequelize db:migrate
+      &&  npx sequelize db:seed:all
   - command: export TZ="Asia/Tokyo"
 
 # Postgresql extension
